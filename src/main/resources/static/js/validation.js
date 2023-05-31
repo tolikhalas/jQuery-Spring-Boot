@@ -60,7 +60,7 @@ $().ready(function () {
                     return $("#age").val() + 1;
                 },
                 max: 99,
-                minLength: 2
+                minlength: 2
             },
             email: {
                 required: true,
@@ -95,7 +95,7 @@ $().ready(function () {
                     " ніж ваш" +
                     " поточний<sup>*</sup>",
                 max: "Ви надто старі. Перепрошуєм<sup>*</sup>",
-                minLength: "Ви повинні бути повнолітні під час виходу на пенсію<sup>*</sup>"
+                minlength: "Ви повинні бути повнолітні під час виходу на пенсію<sup>*</sup>"
             },
             email: {
                 required: "Заповніть дане поле<sup>*</sup>",
