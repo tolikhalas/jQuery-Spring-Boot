@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+
+    <!--  Inserted head content from fragments/base.html  -->
+    <th:block th:insert="~{fragments/base :: head}">
+    </th:block>
+
+    <!--  jQuery attach   -->
+    <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+    <!--  jQuery Validation -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/additional-methods.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/additional-methods.min.js"></script>
+
+    <!--  My Validation Rules  -->
+    <script th:src="@{js/validation.js}"></script>
+
+</head>
+
+<body>
+
+<header th:insert="~{fragments/base :: header}">
+
+</header>
+<div class="container">
+    <div class="row justify-content-center">
+        <form action="" method="post"
+              class="border row col-10 border-primary rounded-3 m-4 p-4 gap-4" id="form">
+            <div class="gender-wrapper px-0">
+
+                <div
+                        class="input-group row align-items-center justify-content-between border rounded-3 p-0 m-0">
+                <span
+                        class="col-lg-3 col-sm-12 input-group-text border-0 border-end pe-1"
+                        id="sex_desc">Oберіть
+                    вашу
+                    стать<sup>*</sup></span>
+
+                    <div
+                            class="options d-flex col-lg-3 gap-4 justify-content-center align-items-center px-4 py-1"
+                            aria-describedby="sex_desc">
+                        <div class="option d-flex gap-3">
+                            <input class="form-check-input required"
+                                   type="radio"
+                                   name="gender"
+                                   value="male">
+                            <label>Чоловіча</label>
+                        </div>
+                        <div class="option d-flex gap-3">
+                            <input class="form-check-input"
+                                   type="radio"
+                                   name="gender"
+                                   value="female">
+                            <label>Жіноча</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="age-input px-0">
+                <div
+                        class="input-group py-1">
+                    <span class="input-group-text d-inline-block">Ваш
+                        вік<sup>*</sup></span>
+                    <input class="px-4 form-control required age" type="number"
+                           name="age" id="age"
+                           placeholder="25">
+                </div>
+            </div>
+            <div class="pension-income-input px-0">
+                <div
+                        class="d-flex input-group">
+                    <span class="input-group-text px-3"
+                          id="pension-desc">Пенсія
+                        <sup>*</sup></span>
+                    <input class="px-4 form-control required pension_income" type="number"
+                           name="pension_income"
+                           id="pension_income"
+                           placeholder="20 000"
+                           aria-describedby="pension-desc,currency">
+                    <select class="input-group-text" name="currency"
+                            id="currency" required>
+                        <option value="hrn">₴</option>
+                        <option value="eur">€</option>
+                        <option value="usd">$</option>
+                    </select>
+                </div>
+            </div>
+            <div class="pension-start-age-input px-0">
+                <div class="input-group">
+                    <span class="input-group-text">Вік виходу на пенсію<sup>*</sup></span>
+                    <input class="form-control px-4 required pension_age"
+                           type="number"
+                           name="pension_age"
+                           id="pension_age" placeholder="65">
+                </div>
+            </div>
+            <div class="email-input px-0">
+                <div class="input-group">
+                    <span class="input-group-text">Ваш email<sup>*</sup></span>
+                    <input class="form-control required email" type="email"
+                           name="email"
+                           id="email" placeholder="john@email.com" >
+                </div>
+            </div>
+
+            <div class="phone-input px-0">
+                <div class="row input-group m-0">
+                <span class="input-group-text col-lg-3 col-md-12 col-sm-12">Ваш
+                    номер
+                    телефону<sup>*</sup></span>
+                    <input class="form-control col-lg-9 required                            "
+                           type="text"
+                           name="number" id="number"
+                           placeholder="+38 (ХХХ) ХХХ-ХХ-ХХ">
+                </div>
+            </div>
+
+            <div class="cv-input px-0">
+                <span class="form-text">Ваше резюме повинно бути у
+                наступних форматах: .doc .docx .txt</span>
+                <div class="row input-group m-0 ">
+                    <span
+                            class="col-lg-2 col-md-3 col-sm-12 input-group-text">Ваше
+                        резюме</span>
+                    <input class="col-lg-10 form-control" type="file"
+                           name="resume"
+                           id="resume">
+                </div>
+            </div>
+
+            <input class="btn btn-primary" id="btn-submit" type="submit"
+                   value="Відправити">
+        </form>
+    </div>
+</div>
+
+
+<!--    Bootstrap Load      -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+
+<!--    Addition Logic     -->
+<script th:src="@{js/form_formating.js}"></script>
+
+</body>
+
+</html>

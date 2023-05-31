@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <th:block th:insert="~{fragments/base :: head}"></th:block>
+</head>
+<body>
+<header th:insert="~{fragments/base :: header}"></header>
+<div class="container">
+    <div class="d-flex justify-content-center p-4 my-4">
+        <h2>Ваша заяка успішно зареєстрована!</h2>
+    </div>
+    <div class="d-flex justify-content-center p-4 my-2">
+        <button class="btn btn-primary"
+                onclick="window.location.href='/'">Повернутись
+        до форми</button>
+    </div>
+</div>
+</body>
+</html>
